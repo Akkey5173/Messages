@@ -1,8 +1,8 @@
 import os
 import schedule
-import nextcord
+import discord
 
-client = nextcord.Client(intents=nextcord.Intents(messages=True, message_content=True))
+client = discord.Client(intents=discord.Intents(messages=True, message_content=True))
 message_count = 0
 
 def reset_count():
