@@ -1,4 +1,5 @@
 import os
+import schedule
 import nextcord
 
 client = nextcord.Client(intents=nextcord.Intents(messages=True, message_content=True))
@@ -7,6 +8,8 @@ message_count = 0
 def reset_count():
   global message_count
   message_count = 0
+  
+schedule.every().day.at("00:00").do(reset_count)
 
 @client.event
 async def on_message(message):
